@@ -1,0 +1,123 @@
+jx_browser_data 79
+# project tree
+0 "root"
+T
+1 "HeaderLib"
+T
+2 "AdGain.h"
+F
+"AdGain.h"
+T
+2 "AdGain.cc"
+F
+"AdGain.cc"
+T
+2 "AdLog.h"
+F
+"AdLog.h"
+T
+2 "AdLog.cc"
+F
+"AdLog.cc"
+T
+2 "Calibrate.h"
+F
+"Calibrate.h"
+T
+2 "Calibrate.cc"
+F
+"Calibrate.cc"
+T
+2 "DataHeader.h"
+F
+"DataHeader.h"
+T
+2 "DataHeader.cc"
+F
+"DataHeader.cc"
+T
+2 "ChannelGr.h"
+F
+"ChannelGr.h"
+T
+2 "ChannelGr.cc"
+F
+"ChannelGr.cc"
+T
+2 "ChannelInfo.h"
+F
+"ChannelInfo.h"
+T
+2 "ChannelInfo.cc"
+F
+"ChannelInfo.cc"
+T
+2 "ChannelSet.h"
+F
+"ChannelSet.h"
+T
+2 "ChannelSet.cc"
+F
+"ChannelSet.cc"
+T
+2 "SampleGr.h"
+F
+"SampleGr.h"
+T
+2 "SampleGr.cc"
+F
+"SampleGr.cc"
+T
+2 "DisplayGr.h"
+F
+"DisplayGr.h"
+T
+2 "DisplayGr.cc"
+F
+"DisplayGr.cc"
+T
+2 "AnalysisGr.h"
+F
+"AnalysisGr.h"
+T
+2 "AnalysisGr.cc"
+F
+"AnalysisGr.cc"
+T
+2 "ScaleInfo.h"
+F
+"ScaleInfo.h"
+T
+2 "ScaleInfo.cc"
+F
+"ScaleInfo.cc"
+T
+2 "GroupList.h"
+F
+"./GroupList.h"
+T
+2 "dataf.h"
+F
+"dataf.h"
+F
+F
+# tasks
+4
+"make depend"
+T "./" "make" "" T F T F T F T "" "" "" F
+T "./" "make -k" "" T F T F T F T "" "" "" T
+T "./" "make $file_name_root" "" T F T T T T F "" "" "" F
+T "./" "make CHECKSTRING=$file_name checksyntax" "" T F T T T T F "" "" "" T
+T "./" "a.out" "" F F F F T T F "" "" "" T
+T "./" "medic -f +$line $full_name" "" F F F T F F F "" "" "" T
+F
+# build settings
+0
+T
+"/usr/local/lib/Headerlib.a"
+""
+"make -k "
+# search paths
+F
+# C preprocessor
+F

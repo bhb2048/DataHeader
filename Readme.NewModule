@@ -1,0 +1,13 @@
+18-oct-12  bhb
+
+To add a new analysis Module:
+*	In appropriate Glas/analysis/modules subdir, write newmodMod.h/cc and newmodControls.h/cc
+*	include/AModules: put links to newmodControls.h & newmodMod.h
+*	Glas/analysis/modules/AModuleControlsInc.h: Add AModules/newmodControls.h
+*	Glas/analysis/modules/AModulesInc.h: Add AModules/newmodMod.h
+*	Amodule.h: Add Module_ID enum.
+*	AMode.cc: Add enum case in copy ctor switch
+*	AMode.cc: Add enum case in read() switch
+*	DataHeaderFl/ModuleNode.cc: Add enum case in createModuleControls() switch
+*	analysis.modes: Incorporate new module in AnalysisGroup type.
+

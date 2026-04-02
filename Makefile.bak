@@ -1,0 +1,268 @@
+#
+#	Makefile for Headerlib.a
+#	
+#	20-sep-2002
+#	
+include ../makeinclude
+
+CXX = g++
+OPTIMIZER = -g
+
+CXXFLAGS= $(OPTIN) $(OPTIMIZER) $(CXXOPTS) $(INCLUDEDIR)
+ARFLAGS= rs
+
+INCLUDEDIR = -I/usr/local/include
+
+# list of all source files
+SOURCES = AdGain.cc AdLog.cc AnalysisGr.cc Calibrate.cc ChannelGr.cc ChannelSet.cc \
+			DisplayGr.cc SampleGr.cc DataHeader.cc AMode.cc AModule.cc ModuleControls.cc \
+			RtAnalysisGr.cc
+			
+%.o : %.cc
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
+
+
+LIB= $(LIBPTH)/Headerlib.a
+
+LIBOBJS= $(SOURCES:.cc=.o)
+
+$(LIB):	$(LIB)($(LIBOBJS))
+
+clean:
+	rm -f $(LIB) *.o
+	
+tidy:
+	rm -f *.o
+
+depend:
+	makedepend -I. $(SOURCES) >/dev/null 2>&1
+# DO NOT DELETE
+
+AdGain.o: /usr/include/errno.h /usr/include/features.h
+AdGain.o: /usr/include/stdc-predef.h /usr/include/sys/cdefs.h
+AdGain.o: /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h
+AdGain.o: /usr/include/bits/errno.h /usr/include/linux/errno.h
+AdGain.o: /usr/include/asm/errno.h /usr/include/asm-generic/errno.h
+AdGain.o: /usr/include/asm-generic/errno-base.h
+AdLog.o: AdLog.h /usr/include/stdio.h /usr/include/features.h
+AdLog.o: /usr/include/stdc-predef.h /usr/include/sys/cdefs.h
+AdLog.o: /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h
+AdLog.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+AdLog.o: /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h
+AdLog.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
+AdLog.o: DataHeader.h SampleGr.h AnalysisGr.h RtAnalysisGr.h
+AdLog.o: /usr/include/time.h /usr/include/bits/time.h /usr/include/xlocale.h
+AdLog.o: /usr/include/stdlib.h /usr/include/bits/waitflags.h
+AdLog.o: /usr/include/bits/waitstatus.h /usr/include/endian.h
+AdLog.o: /usr/include/bits/endian.h /usr/include/bits/byteswap.h
+AdLog.o: /usr/include/bits/byteswap-16.h /usr/include/sys/types.h
+AdLog.o: /usr/include/sys/select.h /usr/include/bits/select.h
+AdLog.o: /usr/include/bits/sigset.h /usr/include/sys/sysmacros.h
+AdLog.o: /usr/include/bits/pthreadtypes.h /usr/include/alloca.h
+AdLog.o: /usr/include/bits/stdlib-float.h /usr/include/string.h
+AdLog.o: /usr/include/ctype.h /usr/include/errno.h /usr/include/bits/errno.h
+AdLog.o: /usr/include/linux/errno.h /usr/include/asm/errno.h
+AdLog.o: /usr/include/asm-generic/errno.h
+AdLog.o: /usr/include/asm-generic/errno-base.h /usr/include/math.h
+AdLog.o: /usr/include/bits/huge_val.h /usr/include/bits/huge_valf.h
+AdLog.o: /usr/include/bits/huge_vall.h /usr/include/bits/inf.h
+AdLog.o: /usr/include/bits/nan.h /usr/include/bits/mathdef.h
+AdLog.o: /usr/include/bits/mathcalls.h
+AnalysisGr.o: AnalysisGr.h DataHeader.h SampleGr.h RtAnalysisGr.h
+AnalysisGr.o: /usr/include/time.h /usr/include/features.h
+AnalysisGr.o: /usr/include/stdc-predef.h /usr/include/sys/cdefs.h
+AnalysisGr.o: /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h
+AnalysisGr.o: /usr/include/bits/time.h /usr/include/bits/types.h
+AnalysisGr.o: /usr/include/bits/typesizes.h /usr/include/xlocale.h
+AnalysisGr.o: DisplayGr.h /usr/include/stdio.h /usr/include/libio.h
+AnalysisGr.o: /usr/include/_G_config.h /usr/include/wchar.h
+AnalysisGr.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
+AnalysisGr.o: /usr/include/string.h /usr/include/ctype.h
+AnalysisGr.o: /usr/include/endian.h /usr/include/bits/endian.h
+AnalysisGr.o: /usr/include/bits/byteswap.h /usr/include/bits/byteswap-16.h
+AnalysisGr.o: /usr/include/sys/types.h /usr/include/sys/select.h
+AnalysisGr.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+AnalysisGr.o: /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h
+AnalysisGr.o: /usr/include/stdlib.h /usr/include/bits/waitflags.h
+AnalysisGr.o: /usr/include/bits/waitstatus.h /usr/include/alloca.h
+AnalysisGr.o: /usr/include/bits/stdlib-float.h
+Calibrate.o: Calibrate.h /usr/include/stdio.h /usr/include/features.h
+Calibrate.o: /usr/include/stdc-predef.h /usr/include/sys/cdefs.h
+Calibrate.o: /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h
+Calibrate.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+Calibrate.o: /usr/include/libio.h /usr/include/_G_config.h
+Calibrate.o: /usr/include/wchar.h /usr/include/bits/stdio_lim.h
+Calibrate.o: /usr/include/bits/sys_errlist.h /usr/include/math.h
+Calibrate.o: /usr/include/bits/huge_val.h /usr/include/bits/huge_valf.h
+Calibrate.o: /usr/include/bits/huge_vall.h /usr/include/bits/inf.h
+Calibrate.o: /usr/include/bits/nan.h /usr/include/bits/mathdef.h
+Calibrate.o: /usr/include/bits/mathcalls.h
+ChannelGr.o: ChannelGr.h /usr/include/stdio.h /usr/include/features.h
+ChannelGr.o: /usr/include/stdc-predef.h /usr/include/sys/cdefs.h
+ChannelGr.o: /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h
+ChannelGr.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+ChannelGr.o: /usr/include/libio.h /usr/include/_G_config.h
+ChannelGr.o: /usr/include/wchar.h /usr/include/bits/stdio_lim.h
+ChannelGr.o: /usr/include/bits/sys_errlist.h /usr/include/string.h
+ChannelGr.o: /usr/include/xlocale.h /usr/include/ctype.h
+ChannelGr.o: /usr/include/endian.h /usr/include/bits/endian.h
+ChannelGr.o: /usr/include/bits/byteswap.h /usr/include/bits/byteswap-16.h
+ChannelGr.o: /usr/include/stdlib.h /usr/include/bits/waitflags.h
+ChannelGr.o: /usr/include/bits/waitstatus.h /usr/include/sys/types.h
+ChannelGr.o: /usr/include/time.h /usr/include/bits/time.h
+ChannelGr.o: /usr/include/sys/select.h /usr/include/bits/select.h
+ChannelGr.o: /usr/include/bits/sigset.h /usr/include/sys/sysmacros.h
+ChannelGr.o: /usr/include/bits/pthreadtypes.h /usr/include/alloca.h
+ChannelGr.o: /usr/include/bits/stdlib-float.h
+ChannelSet.o: ChannelSet.h /usr/include/stdio.h /usr/include/features.h
+ChannelSet.o: /usr/include/stdc-predef.h /usr/include/sys/cdefs.h
+ChannelSet.o: /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h
+ChannelSet.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+ChannelSet.o: /usr/include/libio.h /usr/include/_G_config.h
+ChannelSet.o: /usr/include/wchar.h /usr/include/bits/stdio_lim.h
+ChannelSet.o: /usr/include/bits/sys_errlist.h /usr/include/string.h
+ChannelSet.o: /usr/include/xlocale.h DisplayGr.h DataHeader.h SampleGr.h
+ChannelSet.o: AnalysisGr.h RtAnalysisGr.h /usr/include/time.h
+ChannelSet.o: /usr/include/bits/time.h /usr/include/ctype.h
+ChannelSet.o: /usr/include/endian.h /usr/include/bits/endian.h
+ChannelSet.o: /usr/include/bits/byteswap.h /usr/include/bits/byteswap-16.h
+ChannelSet.o: /usr/include/sys/types.h /usr/include/sys/select.h
+ChannelSet.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+ChannelSet.o: /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h
+DisplayGr.o: DisplayGr.h ChannelSet.h /usr/include/stdio.h
+DisplayGr.o: /usr/include/features.h /usr/include/stdc-predef.h
+DisplayGr.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+DisplayGr.o: /usr/include/gnu/stubs.h /usr/include/bits/types.h
+DisplayGr.o: /usr/include/bits/typesizes.h /usr/include/libio.h
+DisplayGr.o: /usr/include/_G_config.h /usr/include/wchar.h
+DisplayGr.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
+DisplayGr.o: /usr/include/string.h /usr/include/xlocale.h
+DisplayGr.o: /usr/include/ctype.h /usr/include/endian.h
+DisplayGr.o: /usr/include/bits/endian.h /usr/include/bits/byteswap.h
+DisplayGr.o: /usr/include/bits/byteswap-16.h /usr/include/sys/types.h
+DisplayGr.o: /usr/include/time.h /usr/include/bits/time.h
+DisplayGr.o: /usr/include/sys/select.h /usr/include/bits/select.h
+DisplayGr.o: /usr/include/bits/sigset.h /usr/include/sys/sysmacros.h
+DisplayGr.o: /usr/include/bits/pthreadtypes.h
+SampleGr.o: SampleGr.h DisplayGr.h
+DataHeader.o: DataHeader.h SampleGr.h AnalysisGr.h RtAnalysisGr.h
+DataHeader.o: /usr/include/time.h /usr/include/features.h
+DataHeader.o: /usr/include/stdc-predef.h /usr/include/sys/cdefs.h
+DataHeader.o: /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h
+DataHeader.o: /usr/include/bits/time.h /usr/include/bits/types.h
+DataHeader.o: /usr/include/bits/typesizes.h /usr/include/xlocale.h
+DataHeader.o: DisplayGr.h /usr/include/string.h /usr/include/ctype.h
+DataHeader.o: /usr/include/endian.h /usr/include/bits/endian.h
+DataHeader.o: /usr/include/bits/byteswap.h /usr/include/bits/byteswap-16.h
+DataHeader.o: /usr/include/sys/types.h /usr/include/sys/select.h
+DataHeader.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+DataHeader.o: /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h
+DataHeader.o: /usr/include/sys/stat.h /usr/include/bits/stat.h
+DataHeader.o: /usr/include/unistd.h /usr/include/bits/posix_opt.h
+DataHeader.o: /usr/include/bits/environments.h /usr/include/bits/confname.h
+DataHeader.o: /usr/include/getopt.h
+AMode.o: AMode.h AModule.h ModuleControls.h /usr/include/boost/shared_ptr.hpp
+AMode.o: /usr/include/boost/smart_ptr/shared_ptr.hpp
+AMode.o: /usr/include/boost/config.hpp /usr/include/boost/config/user.hpp
+AMode.o: /usr/include/boost/config/select_compiler_config.hpp
+AMode.o: /usr/include/boost/config/compiler/gcc.hpp
+AMode.o: /usr/include/boost/config/select_platform_config.hpp
+AMode.o: /usr/include/boost/config/posix_features.hpp /usr/include/unistd.h
+AMode.o: /usr/include/features.h /usr/include/stdc-predef.h
+AMode.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+AMode.o: /usr/include/gnu/stubs.h /usr/include/bits/posix_opt.h
+AMode.o: /usr/include/bits/environments.h /usr/include/bits/types.h
+AMode.o: /usr/include/bits/typesizes.h /usr/include/bits/confname.h
+AMode.o: /usr/include/getopt.h /usr/include/boost/config/suffix.hpp
+AMode.o: /usr/include/boost/config/no_tr1/memory.hpp
+AMode.o: /usr/include/boost/assert.hpp /usr/include/assert.h
+AMode.o: /usr/include/boost/current_function.hpp
+AMode.o: /usr/include/boost/checked_delete.hpp
+AMode.o: /usr/include/boost/throw_exception.hpp
+AMode.o: /usr/include/boost/exception/detail/attribute_noreturn.hpp
+AMode.o: /usr/include/boost/detail/workaround.hpp
+AMode.o: /usr/include/boost/config.hpp
+AMode.o: /usr/include/boost/smart_ptr/detail/shared_count.hpp
+AMode.o: /usr/include/boost/smart_ptr/bad_weak_ptr.hpp
+AMode.o: /usr/include/boost/smart_ptr/detail/sp_counted_base.hpp
+AMode.o: /usr/include/boost/smart_ptr/detail/sp_has_sync.hpp
+AMode.o: /usr/include/boost/smart_ptr/detail/sp_counted_base_gcc_x86.hpp
+AMode.o: /usr/include/boost/detail/sp_typeinfo.hpp
+AMode.o: /usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp
+AMode.o: /usr/include/boost/utility/addressof.hpp
+AMode.o: /usr/include/boost/smart_ptr/detail/sp_convertible.hpp
+AMode.o: /usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp
+AMode.o: /usr/include/boost/smart_ptr/detail/spinlock_pool.hpp
+AMode.o: /usr/include/boost/smart_ptr/detail/spinlock.hpp
+AMode.o: /usr/include/boost/smart_ptr/detail/spinlock_pt.hpp
+AMode.o: /usr/include/pthread.h /usr/include/endian.h
+AMode.o: /usr/include/bits/endian.h /usr/include/bits/byteswap.h
+AMode.o: /usr/include/bits/byteswap-16.h /usr/include/sched.h
+AMode.o: /usr/include/time.h /usr/include/bits/time.h /usr/include/xlocale.h
+AMode.o: /usr/include/bits/sched.h /usr/include/bits/pthreadtypes.h
+AMode.o: /usr/include/bits/setjmp.h /usr/include/boost/memory_order.hpp
+AMode.o: /usr/include/boost/smart_ptr/detail/operator_bool.hpp
+AModule.o: AModule.h ModuleControls.h /usr/include/boost/shared_ptr.hpp
+AModule.o: /usr/include/boost/smart_ptr/shared_ptr.hpp
+AModule.o: /usr/include/boost/config.hpp /usr/include/boost/config/user.hpp
+AModule.o: /usr/include/boost/config/select_compiler_config.hpp
+AModule.o: /usr/include/boost/config/compiler/gcc.hpp
+AModule.o: /usr/include/boost/config/select_platform_config.hpp
+AModule.o: /usr/include/boost/config/posix_features.hpp /usr/include/unistd.h
+AModule.o: /usr/include/features.h /usr/include/stdc-predef.h
+AModule.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+AModule.o: /usr/include/gnu/stubs.h /usr/include/bits/posix_opt.h
+AModule.o: /usr/include/bits/environments.h /usr/include/bits/types.h
+AModule.o: /usr/include/bits/typesizes.h /usr/include/bits/confname.h
+AModule.o: /usr/include/getopt.h /usr/include/boost/config/suffix.hpp
+AModule.o: /usr/include/boost/config/no_tr1/memory.hpp
+AModule.o: /usr/include/boost/assert.hpp /usr/include/assert.h
+AModule.o: /usr/include/boost/current_function.hpp
+AModule.o: /usr/include/boost/checked_delete.hpp
+AModule.o: /usr/include/boost/throw_exception.hpp
+AModule.o: /usr/include/boost/exception/detail/attribute_noreturn.hpp
+AModule.o: /usr/include/boost/detail/workaround.hpp
+AModule.o: /usr/include/boost/config.hpp
+AModule.o: /usr/include/boost/smart_ptr/detail/shared_count.hpp
+AModule.o: /usr/include/boost/smart_ptr/bad_weak_ptr.hpp
+AModule.o: /usr/include/boost/smart_ptr/detail/sp_counted_base.hpp
+AModule.o: /usr/include/boost/smart_ptr/detail/sp_has_sync.hpp
+AModule.o: /usr/include/boost/smart_ptr/detail/sp_counted_base_gcc_x86.hpp
+AModule.o: /usr/include/boost/detail/sp_typeinfo.hpp
+AModule.o: /usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp
+AModule.o: /usr/include/boost/utility/addressof.hpp
+AModule.o: /usr/include/boost/smart_ptr/detail/sp_convertible.hpp
+AModule.o: /usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp
+AModule.o: /usr/include/boost/smart_ptr/detail/spinlock_pool.hpp
+AModule.o: /usr/include/boost/smart_ptr/detail/spinlock.hpp
+AModule.o: /usr/include/boost/smart_ptr/detail/spinlock_pt.hpp
+AModule.o: /usr/include/pthread.h /usr/include/endian.h
+AModule.o: /usr/include/bits/endian.h /usr/include/bits/byteswap.h
+AModule.o: /usr/include/bits/byteswap-16.h /usr/include/sched.h
+AModule.o: /usr/include/time.h /usr/include/bits/time.h
+AModule.o: /usr/include/xlocale.h /usr/include/bits/sched.h
+AModule.o: /usr/include/bits/pthreadtypes.h /usr/include/bits/setjmp.h
+AModule.o: /usr/include/boost/memory_order.hpp
+AModule.o: /usr/include/boost/smart_ptr/detail/operator_bool.hpp
+AModule.o: /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h
+AModule.o: /usr/include/wchar.h /usr/include/bits/stdio_lim.h
+AModule.o: /usr/include/bits/sys_errlist.h /usr/include/stdlib.h
+AModule.o: /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h
+AModule.o: /usr/include/sys/types.h /usr/include/sys/select.h
+AModule.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+AModule.o: /usr/include/sys/sysmacros.h /usr/include/alloca.h
+AModule.o: /usr/include/bits/stdlib-float.h /usr/include/string.h
+ModuleControls.o: ModuleControls.h /usr/include/stdio.h
+ModuleControls.o: /usr/include/features.h /usr/include/stdc-predef.h
+ModuleControls.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+ModuleControls.o: /usr/include/gnu/stubs.h /usr/include/bits/types.h
+ModuleControls.o: /usr/include/bits/typesizes.h /usr/include/libio.h
+ModuleControls.o: /usr/include/_G_config.h /usr/include/wchar.h
+ModuleControls.o: /usr/include/bits/stdio_lim.h
+ModuleControls.o: /usr/include/bits/sys_errlist.h
+RtAnalysisGr.o: RtAnalysisGr.h DataHeader.h SampleGr.h AnalysisGr.h
+RtAnalysisGr.o: /usr/include/time.h /usr/include/features.h
+RtAnalysisGr.o: /usr/include/stdc-predef.h /usr/include/sys/cdefs.h
+RtAnalysisGr.o: /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h
+RtAnalysisGr.o: /usr/include/bits/time.h /usr/include/bits/types.h
+RtAnalysisGr.o: /usr/include/bits/typesizes.h /usr/include/xlocale.h
